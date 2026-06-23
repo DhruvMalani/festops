@@ -247,3 +247,4 @@ The lifecycle itself is **not** modeled with inheritance but with the **State pa
 ## Testing
 
 `mvn test` runs 28 JUnit 5 tests covering: every valid/invalid state transition, dispatcher scoring (skill, proximity, load) and the no-responder failure, rule-based triage classification + severity, and Haversine distances against known reference values.
+Developed by Dhruv Malani and Yash Jain — CS F213, BITS Pilani, Summer 2026
