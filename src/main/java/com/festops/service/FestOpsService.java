@@ -255,22 +255,24 @@ public class FestOpsService {
     }
 
     /**
-     * Apply a lifecycle transition named by {@code action}
-     * (acknowledge / respond / resolve / escalate) to the given incident.
+     * Move an incident to the requested target {@code status}, one of
+     * ACKNOWLEDGED / RESPONDING / RESOLVED / ESCALATED. The target state maps to
+     * the lifecycle transition that reaches it; an illegal move from the current
+     * state throws {@link com.festops.exception.InvalidStateTransitionException}.
      */
-    public Incident transition(String id, String action) {
+    public Incident transition(String id, String status) {
         Incident incident = getIncident(id);
-        if (action == null) {
-            throw new IllegalArgumentException("Missing 'action'");
+        if (status == null || status.isBlank()) {
+            throw new IllegalArgumentException("Missing 'status'");
         }
-        switch (action.trim().toLowerCase()) {
-            case "acknowledge" -> incident.acknowledge();
-            case "respond" -> incident.respond();
-            case "resolve" -> incident.resolve();
-            case "escalate" -> incident.escalate();
+        switch (status.trim().toUpperCase()) {
+            case "ACKNOWLEDGED" -> incident.acknowledge();
+            case "RESPONDING" -> incident.respond();
+            case "RESOLVED" -> incident.resolve();
+            case "ESCALATED" -> incident.escalate();
             default -> throw new IllegalArgumentException(
-                    "Unknown action '" + action + "'. Expected one of: "
-                            + "acknowledge, respond, resolve, escalate");
+                    "Unknown status '" + status + "'. Expected one of: "
+                            + "ACKNOWLEDGED, RESPONDING, RESOLVED, ESCALATED");
         }
         return incident;
     }

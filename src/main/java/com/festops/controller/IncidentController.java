@@ -45,7 +45,7 @@ public class IncidentController {
     @PatchMapping("/{id}/status")
     public IncidentResponse updateStatus(@PathVariable String id,
                                          @RequestBody StatusUpdateRequest request) {
-        Incident incident = service.transition(id, request.action());
+        Incident incident = service.transition(id, request.status());
         return IncidentResponse.from(incident, service.auditTrail(id));
     }
 }

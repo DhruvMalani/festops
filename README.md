@@ -153,12 +153,12 @@ curl http://localhost:8080/api/v1/incidents/INC-1
 ```
 
 ### Transition an incident's lifecycle
-`action` ∈ `acknowledge | respond | resolve | escalate`.
+`status` is the target state ∈ `ACKNOWLEDGED | RESPONDING | RESOLVED | ESCALATED`.
 ```bash
 curl -X PATCH http://localhost:8080/api/v1/incidents/INC-1/status \
   -H 'Content-Type: application/json' \
-  -d '{"action":"acknowledge"}'
-# invalid transition -> 409, unknown action -> 400, unknown id -> 404
+  -d '{"status":"ACKNOWLEDGED"}'
+# invalid transition -> 409, unknown status -> 400, unknown id -> 404
 ```
 
 ### List responders
