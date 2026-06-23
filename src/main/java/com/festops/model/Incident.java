@@ -60,7 +60,7 @@ public abstract class Incident {
         transitionTo(state.acknowledge(this));
     }
 
-    public synchronized void respond() {
+    public synchronized void startResponding() {
         transitionTo(state.respond(this));
     }
 

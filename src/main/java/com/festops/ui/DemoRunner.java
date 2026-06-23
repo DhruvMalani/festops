@@ -72,7 +72,7 @@ public class DemoRunner {
 
             // Walk the happy-path lifecycle: REPORTED -> ACKNOWLEDGED -> RESPONDING -> RESOLVED.
             incident.acknowledge();
-            incident.respond();
+            incident.startResponding();
             incident.resolve();
             System.out.println("   lifecycle  -> final state = " + incident.getStateName());
             System.out.println();

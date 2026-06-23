@@ -267,7 +267,7 @@ public class FestOpsService {
         }
         switch (status.trim().toUpperCase()) {
             case "ACKNOWLEDGED" -> incident.acknowledge();
-            case "RESPONDING" -> incident.respond();
+            case "RESPONDING" -> incident.startResponding();
             case "RESOLVED" -> incident.resolve();
             case "ESCALATED" -> incident.escalate();
             default -> throw new IllegalArgumentException(

@@ -25,8 +25,8 @@ class IncidentStateTransitionTest {
         switch (target) {
             case "REPORTED" -> { /* already there */ }
             case "ACKNOWLEDGED" -> incident.acknowledge();
-            case "RESPONDING" -> { incident.acknowledge(); incident.respond(); }
-            case "RESOLVED" -> { incident.acknowledge(); incident.respond(); incident.resolve(); }
+            case "RESPONDING" -> { incident.acknowledge(); incident.startResponding(); }
+            case "RESOLVED" -> { incident.acknowledge(); incident.startResponding(); incident.resolve(); }
             case "ESCALATED" -> incident.escalate();
             default -> throw new IllegalArgumentException(target);
         }
@@ -51,7 +51,7 @@ class IncidentStateTransitionTest {
     @Test
     void acknowledgedToResponding() {
         Incident i = inState("ACKNOWLEDGED");
-        i.respond();
+        i.startResponding();
         assertEquals("RESPONDING", i.getStateName());
     }
 
@@ -83,7 +83,7 @@ class IncidentStateTransitionTest {
     void fullHappyPath() {
         Incident i = newIncident();
         i.acknowledge();
-        i.respond();
+        i.startResponding();
         i.resolve();
         assertEquals("RESOLVED", i.getStateName());
     }
@@ -92,7 +92,7 @@ class IncidentStateTransitionTest {
 
     @Test
     void reportedRejectsRespondAndResolve() {
-        assertThrows(InvalidStateTransitionException.class, () -> inState("REPORTED").respond());
+        assertThrows(InvalidStateTransitionException.class, () -> inState("REPORTED").startResponding());
         assertThrows(InvalidStateTransitionException.class, () -> inState("REPORTED").resolve());
     }
 
@@ -105,19 +105,19 @@ class IncidentStateTransitionTest {
     @Test
     void respondingRejectsAcknowledgeAndRespond() {
         assertThrows(InvalidStateTransitionException.class, () -> inState("RESPONDING").acknowledge());
-        assertThrows(InvalidStateTransitionException.class, () -> inState("RESPONDING").respond());
+        assertThrows(InvalidStateTransitionException.class, () -> inState("RESPONDING").startResponding());
     }
 
     @Test
     void resolvedRejectsEverythingButEscalate() {
         assertThrows(InvalidStateTransitionException.class, () -> inState("RESOLVED").acknowledge());
-        assertThrows(InvalidStateTransitionException.class, () -> inState("RESOLVED").respond());
+        assertThrows(InvalidStateTransitionException.class, () -> inState("RESOLVED").startResponding());
         assertThrows(InvalidStateTransitionException.class, () -> inState("RESOLVED").resolve());
     }
 
     @Test
     void escalatedRejectsRespondResolveAndReEscalate() {
-        assertThrows(InvalidStateTransitionException.class, () -> inState("ESCALATED").respond());
+        assertThrows(InvalidStateTransitionException.class, () -> inState("ESCALATED").startResponding());
         assertThrows(InvalidStateTransitionException.class, () -> inState("ESCALATED").resolve());
         assertThrows(InvalidStateTransitionException.class, () -> inState("ESCALATED").escalate());
     }
