@@ -1,6 +1,8 @@
 # FestOps
 
 FestOps is an incident management and dispatch platform for a large cultural festival. It accepts emergency SOS reports, automatically triages each one into a category and severity, dispatches the best-suited responder using a proximity/skill/load scoring model, tracks every incident through a strict lifecycle state machine, and persists a full audit trail. It also includes an attendee-facing "concierge" that surfaces nearby events starting soon, a Swing operations dashboard, and a pluggable LLM-backed triage strategy.
+Developed by Dhruv Malani and Yash Jain — CS F213, BITS Pilani, Summer 2026
+
 
 ## The problem it solves
 
