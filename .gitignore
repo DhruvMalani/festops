@@ -1,0 +1,27 @@
+# Build output
+target/
+*.class
+
+# H2 database files
+data/*.db
+*.mv.db
+*.trace.db
+
+# Secrets / API keys — never commit credentials
+*.env
+.env
+.env.*
+**/secrets.properties
+**/application-local.properties
+*apikey*
+*api-key*
+*api_key*
+*.pem
+*.key
+
+# OS / editor cruft
+.DS_Store
+*.swp
+*.iml
+.idea/
+.vscode/

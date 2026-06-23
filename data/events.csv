@@ -1,0 +1,18 @@
+id,name,venueName,latitude,longitude,startTime,endTime,capacity,tags
+E001,Break The Case,F101,28.3641,75.5878,2025-01-15T09:00:00,2025-01-15T12:00:00,200,case-study,business,competition
+E002,CSA Tech Talk,F103,28.3641,75.5878,2025-01-15T10:00:00,2025-01-15T13:00:00,200,tech,coding,talk
+E003,BITSMUN Opening Ceremony,F104,28.3641,75.5878,2025-01-15T09:30:00,2025-01-15T11:30:00,200,mun,debate,diplomacy
+E004,QuantumVerse - Qiskit Workshop,F105,28.3641,75.5878,2025-01-15T11:00:00,2025-01-15T14:00:00,400,quantum,tech,workshop
+E005,SEDS Space Talk,F105,28.3641,75.5878,2025-01-15T15:00:00,2025-01-15T17:00:00,400,space,tech,talk
+E006,Quant Finance Workshop,F106,28.3641,75.5878,2025-01-15T10:00:00,2025-01-15T12:00:00,200,finance,quant,workshop
+E007,ACM Coding Contest,F106,28.3641,75.5878,2025-01-15T14:00:00,2025-01-15T17:00:00,200,coding,competition,tech
+E008,Economics Association Lecture,F106,28.3641,75.5878,2025-01-15T17:30:00,2025-01-15T19:00:00,200,economics,lecture,finance
+E009,BITSMUN Committee Session,I112,28.3628,75.5862,2025-01-15T09:00:00,2025-01-15T18:00:00,56,mun,debate,diplomacy
+E010,Panacea Soap Making Workshop,I114,28.3628,75.5862,2025-01-15T10:00:00,2025-01-15T13:00:00,56,workshop,biology,hands-on
+E011,DORA Photography Session,I122,28.3628,75.5862,2025-01-15T11:00:00,2025-01-15T14:00:00,56,photography,arts,workshop
+E012,Robowars,I210,28.3622,75.5858,2025-01-15T09:00:00,2025-01-15T21:00:00,56,robotics,competition,engineering
+E013,Axiom Enigma Room,I211,28.3622,75.5858,2025-01-15T06:00:00,2025-01-15T21:00:00,56,puzzle,gaming,fun
+E014,DORA Digital Art Exhibition,I212,28.3622,75.5858,2025-01-15T10:00:00,2025-01-15T18:00:00,56,art,digital,exhibition
+E015,Spectrum Escape Room,I213,28.3622,75.5858,2025-01-15T10:00:00,2025-01-15T20:00:00,56,puzzle,gaming,fun
+E016,BITSMUN Press Conference,I221,28.3622,75.5858,2025-01-15T14:00:00,2025-01-15T16:00:00,56,mun,press,debate
+E017,DePP Policy Debate,I222,28.3622,75.5858,2025-01-15T11:00:00,2025-01-15T15:00:00,56,debate,policy,competition

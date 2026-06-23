@@ -1,0 +1,11 @@
+id,name,skill,lat,lng,available,currentLoad
+R1,Dr. Arjun Mehta,medical,28.3635,75.5872,true,0
+R2,Dr. Kavya Nair,medical,28.3628,75.5865,true,1
+R3,Vikram Singh,security,28.3640,75.5880,true,0
+R4,Pooja Sharma,security,28.3620,75.5860,false,2
+R5,Fire Team Alpha,fire,28.3645,75.5868,true,0
+R6,Fire Team Bravo,fire,28.3615,75.5885,true,1
+R7,Ramesh Kumar,maintenance,28.3632,75.5890,true,0
+R8,Sunita Devi,maintenance,28.3650,75.5855,false,0
+R9,Dr. Imran Khan,medical,28.3625,75.5878,true,0
+R10,Anil Gupta,security,28.3638,75.5848,true,1

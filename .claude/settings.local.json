@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p ~/.local/opt)",
+      "Bash(tar -xzf /tmp/maven.tar.gz -C ~/.local/opt)",
+      "Read(//Users/dhruvmalani/.local/**)",
+      "Bash(~/.local/opt/apache-maven-3.9.16/bin/mvn --version)"
+    ]
+  }
+}
